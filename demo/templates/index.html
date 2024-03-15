@@ -1,0 +1,133 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{%static  'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static  'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static  'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static  'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static  'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static  'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static  'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static  'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			{% comment %} <div class="contact1-pic js-tilt" data-tilt>
+				<img src="{% static 'images/img-01.png' %}" alt="IMG">
+			</div> {% endcomment %}
+
+			<form class="contact1-form validate-form" method='POST' id="contact_info">
+				<span class="contact1-form-title">
+					Add a new contact
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Firstname is required">
+					<input class="input1" type="text" name="firstname" placeholder="Firstname">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Lastname is required">
+					<input class="input1" type="text" name="lastname" placeholder="Lastname">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" >
+					<span class="label1">Gender: </span>
+					<input type="radio" id="male" name="gender" value="M" checked>
+					<label for="male">Male</label>
+					<input type="radio" id="female" name="gender" value="F">
+					<label for="female">Female</label> 
+				</div>
+				 
+				  
+				<div class="wrap-input1 validate-input" data-validate = "Date of birth is required">
+					<input class="input1" type="date" name="dob" min="1900-01-01">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Address is required">
+					<input class="input1" type="text" name="address" placeholder="Address">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input class="input1" type="text" name="email" placeholder="Email">
+					<span class="shadow-input1"></span>
+				</div>
+
+				{% comment %} <div class="wrap-input1 validate-input" data-validate = "Message is required">
+					<textarea class="input1" name="message" placeholder="Message"></textarea>
+					<span class="shadow-input1"></span>
+				</div> {% endcomment %}
+
+				<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn">
+						<span>
+							Save
+							<i class="fa fa-upload" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+
+			<div class="container-contact1-form-btn">
+				<button class="contact1-form-btn warning" id="clear-db">
+					<span>
+						Clear DB
+						<i class="fa fa-trash-o" aria-hidden="true"></i>
+					</span>
+				</button>
+			</div>
+
+			<span id="message" style="display: none;">
+			</span>
+		</div>
+	</div>
+
+
+	<footer class="text-secondary small">Senouci Hadj</footer>
+
+<!--===============================================================================================-->
+	<script src="{%static  'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{%static  'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{%static  'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{%static  'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{%static  'vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+	<script src="{%static 'js/main.js' %}"></script>
+
+</body>
+</html>

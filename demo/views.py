@@ -1,9 +1,10 @@
-from django.http import JsonResponse
 from .models import Form
 from .serializers import FormSerializer
+from django.shortcuts import render, redirect
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from .forms import ContactForm
 
 
 @api_view(['GET', 'POST', 'DELETE'])
@@ -31,6 +32,7 @@ def user_list(request, format=None):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def user_detail(request, id, format=None):
+
     try:
         # get a single form
         form = Form.objects.get(pk=id)
@@ -51,3 +53,14 @@ def user_detail(request, id, format=None):
     elif request.method == 'DELETE':
         form.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+@api_view(['GET', 'POST'])
+def home(request):
+    if request.method == 'GET':
+        return render(request, "index.html", {})
+    
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            return redirect("home")
+        return render(request, "index.html", {'form': form})
