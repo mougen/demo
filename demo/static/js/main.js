@@ -102,6 +102,7 @@
             throw new Error('Network response was not ok');
             }
             showMsg('Contact added successfully')
+            $('#contact_info').trigger("reset");
             return response.json();
         })
         .then(data => {
@@ -129,6 +130,7 @@
                 showMsg('Something went wrong!')
             throw new Error('Network response was not ok');
             }
+
             showMsg('All contacts deleted successfully')
         })
         .then(data => {

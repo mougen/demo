@@ -59,8 +59,8 @@ def home(request):
     if request.method == 'GET':
         return render(request, "index.html", {})
     
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            return redirect("home")
-        return render(request, "index.html", {'form': form})
+    # if request.method == 'POST':
+    #     form = ContactForm(request.POST)
+    #     if form.is_valid():
+    #         return redirect("home")
+    #     return render(request, "index.html", {'form': form})

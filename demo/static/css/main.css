@@ -195,6 +195,16 @@ iframe {
   padding-bottom: 44px;
 }
 
+.text1 {
+  display: block;
+  font-family: Montserrat-ExtraBold;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 input.input1 {
   height: 50px;
   border-radius: 25px;
